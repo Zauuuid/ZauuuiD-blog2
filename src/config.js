@@ -21,12 +21,12 @@ export const siteConfig = {
     // Social Links
     // ============================================
     socials: [
-        { icon: Linkedin, href: import.meta.env.VITE_LINKEDIN, label: 'LinkedIn' },
-        { icon: Github, href: import.meta.env.VITE_GITHUB, label: 'GitHub' },
-        { icon: Mail, href: import.meta.env.VITE_EMAIL, label: 'Email' },
-        { icon: Instagram, href: import.meta.env.VITE_INSTAGRAM, label: 'Instagram' },
-        { icon: DiscordIcon, href: import.meta.env.VITE_DISCORD, label: 'Discord' },
-        { icon: HackTheBoxIcon, href: import.meta.env.VITE_HACKTHEBOX, label: 'HackTheBox' },
-        { icon: FlagYardIcon, href: import.meta.env.VITE_FLAGYARD, label: 'FlagYard' },
+        { icon: Linkedin, href: "https://www.linkedin.com/in/ZauuuiD-mulla/", label: 'LinkedIn' },
+        { icon: Github, href: "https://github.com/ZauuuiD", label: 'GitHub' },
+        { icon: Mail, href: "mailto:rshashmanab00@gmail.com", label: 'Email' },
+        { icon: Instagram, href: "https://instagram.com/8ktg", label: 'Instagram' },
+        { icon: DiscordIcon, href: "https://discord.com/users/429005656457084956", label: 'Discord' },
+        { icon: HackTheBoxIcon, href: "https://app.hackthebox.com/users/2096634", label: 'HackTheBox' },
+        { icon: FlagYardIcon, href: "https://flagyard.com/profile/zauuuid", label: 'FlagYard' },
     ].filter(link => link.href && link.href !== ""),
 };
