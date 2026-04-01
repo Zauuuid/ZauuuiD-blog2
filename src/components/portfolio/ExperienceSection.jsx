@@ -67,7 +67,7 @@ export default function ExperienceSection() {
     },
   };
   return (
-    <section id="experience" className="min-h-screen py-20 lg:py-32 relative" ref={ref}>
+    <section id="experience" className="min-h-screen py-20 lg:py-32 relative flex flex-col items-center justify-center" ref={ref}>
       <div className="container mx-auto px-4 md:px-8 flex justify-center">
         <div className="max-w-4xl w-full flex flex-col items-center">
           {/* Section Header */}
