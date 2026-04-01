@@ -36,7 +36,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
             className="cursor-pointer"
           >
             <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20">
-              <span className="text-white font-black text-lg">S</span>
+              <span className="text-white font-black text-lg">Z</span>
             </div>
           </motion.div>
           <AudioController audioRef={audioRef} />
@@ -80,7 +80,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
           <div className="flex items-center gap-4">
             <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
               <div className="w-9 h-9 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-black">S</span>
+                <span className="text-white font-black">Z</span>
               </div>
               <span className="text-white font-semibold tracking-wide">ZauuuiD</span>
             </button>
