@@ -18,40 +18,23 @@ export default function ParticleBackground() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
-
-    class Particle {
+    class ConstellationParticle {
       constructor() {
+        this.reset();
+      }
+
+      reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
+        this.size = Math.random() * 1.5 + 0.5;
+        this.speedX = Math.random() * 0.4 - 0.2;
+        this.speedY = Math.random() * 0.4 - 0.2;
         this.opacity = Math.random() * 0.5 + 0.2;
       }
 
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-
-        if (mouse.x != null && mouse.y != null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < mouse.radius) {
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            const maxDistance = mouse.radius;
-            const force = (maxDistance - distance) / maxDistance;
-            const directionX = forceDirectionX * force * 2;
-            const directionY = forceDirectionY * force * 2;
-            this.x -= directionX;
-            this.y -= directionY;
-          }
-        }
 
         if (this.x > canvas.width) this.x = 0;
         if (this.x < 0) this.x = canvas.width;
@@ -60,33 +43,71 @@ export default function ParticleBackground() {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(239, 68, 68, ${this.opacity})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
+    class FallingStar {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = -Math.random() * canvas.height;
+        this.length = Math.random() * 20 + 10;
+        this.speed = Math.random() * 3 + 2;
+        this.opacity = Math.random() * 0.5 + 0.1;
+      }
+
+      update() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+          this.reset();
+          this.y = -this.length;
+        }
+      }
+
+      draw() {
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x, this.y + this.length);
+        ctx.stroke();
+      }
+    }
+
+    let constellation = [];
+    let stars = [];
+
     const init = () => {
-      particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
-      for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(new Particle());
+      constellation = [];
+      stars = [];
+      const count = Math.floor((canvas.width * canvas.height) / 15000);
+      for (let i = 0; i < count; i++) {
+        constellation.push(new ConstellationParticle());
+      }
+      for (let i = 0; i < 20; i++) {
+        stars.push(new FallingStar());
       }
     };
 
-    const connectParticles = () => {
-      for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-          let dx = particles[a].x - particles[b].x;
-          let dy = particles[a].y - particles[b].y;
+    const drawLines = () => {
+      for (let a = 0; a < constellation.length; a++) {
+        for (let b = a; b < constellation.length; b++) {
+          let dx = constellation[a].x - constellation[b].x;
+          let dy = constellation[a].y - constellation[b].y;
           let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 120) {
-            ctx.strokeStyle = `rgba(239, 68, 68, ${0.1 * (1 - distance / 120)})`;
+          if (distance < 100) {
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
-            ctx.moveTo(particles[a].x, particles[a].y);
-            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.moveTo(constellation[a].x, constellation[a].y);
+            ctx.lineTo(constellation[b].x, constellation[b].y);
             ctx.stroke();
           }
         }
@@ -95,11 +116,18 @@ export default function ParticleBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
-      connectParticles();
+      
+      constellation.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      drawLines();
+
+      stars.forEach(s => {
+        s.update();
+        s.draw();
+      });
+
       animationFrameId = requestAnimationFrame(animate);
     };
 

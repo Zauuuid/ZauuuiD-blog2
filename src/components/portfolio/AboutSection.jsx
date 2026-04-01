@@ -31,7 +31,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-red-500 text-sm tracking-widest flex items-center gap-2 uppercase font-semibold bg-red-500/10 px-4 py-1.5 rounded-full border border-red-500/20"
+              className="text-gray-200 text-sm tracking-widest flex items-center gap-2 uppercase font-semibold bg-white/10 px-4 py-1.5 rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
             >
               Profile
             </motion.span>
@@ -52,10 +52,10 @@ export default function AboutSection() {
               className="space-y-6 text-gray-300 leading-relaxed max-w-3xl text-sm md:text-base md:leading-loose"
             >
               <p>
-                Ambitious and committed <span className="text-red-400 font-medium">offensive security</span> and
+                Ambitious and committed <span className="text-white font-medium drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">offensive security</span> and
                 senior <span className="text-white font-semibold">computer science student</span> with a solid
-                and growing background in <span className="text-red-400">vulnerability assessment</span> and
-                <span className="text-red-400"> penetration testing</span>.
+                and growing background in <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">vulnerability assessment</span> and
+                <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"> penetration testing</span>.
               </p>
               <p>
                 Hands-on experience conducting <span className="text-white font-semibold">real-world security assessments</span>,
@@ -64,7 +64,7 @@ export default function AboutSection() {
               </p>
               <p>
                 Known for <span className="text-white font-semibold">strong analytical skills</span>, adaptability, and a
-                <span className="text-red-400 font-medium"> leadership-driven approach</span> to teamwork. Dedicated to
+                <span className="text-white font-medium drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"> leadership-driven approach</span> to teamwork. Dedicated to
                 developing deeper offensive security expertise and delivering reliable, high-impact testing results.
               </p>
             </motion.div>
@@ -80,9 +80,9 @@ export default function AboutSection() {
                 <motion.div
                   key={item.label}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="w-full sm:flex-1 p-6 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-md text-center flex flex-col items-center justify-center hover:bg-white/10 hover:border-red-500/30 transition-all duration-300 shadow-xl"
+                  className="w-full sm:flex-1 p-6 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-md text-center flex flex-col items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all duration-300 shadow-xl"
                 >
-                  <item.icon className="w-8 h-8 text-red-500 mb-3 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]" />
+                  <item.icon className="w-8 h-8 text-white mb-3 drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]" />
                   <div className="text-white text-base md:text-lg font-bold">{item.value}</div>
                   <div className="text-gray-400 text-sm mt-1">{item.label}</div>
                 </motion.div>
@@ -101,7 +101,7 @@ export default function AboutSection() {
           opacity: { delay: 1, duration: 0.5 },
           y: { delay: 1, duration: 1.5, repeat: Infinity },
         }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-red-500/50 hover:text-red-400 transition-colors cursor-pointer z-10"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 hover:text-white transition-colors cursor-pointer z-10"
       >
         <ChevronDown size={32} />
       </motion.button>

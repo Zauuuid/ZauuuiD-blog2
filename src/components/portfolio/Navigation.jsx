@@ -35,7 +35,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
             onClick={() => scrollTo("home")}
             className="cursor-pointer"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20">
+            <div className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.15)]">
               <span className="text-white font-black text-lg">Z</span>
             </div>
           </motion.div>
@@ -57,7 +57,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
                 <span
                   className={[
                     "w-2.5 h-2.5 rounded-full transition-all duration-300",
-                    isActive ? "bg-red-500 scale-125" : "bg-white/20 group-hover:bg-white/40",
+                    isActive ? "bg-white scale-125 shadow-[0_0_10px_rgba(255,255,255,0.9)]" : "bg-white/20 group-hover:bg-white/40",
                   ].join(" ")}
                 />
                 <span className="absolute left-7 whitespace-nowrap text-xs tracking-widest uppercase text-gray-500 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
@@ -79,7 +79,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
         <div className="px-5 py-4 flex items-center justify-between backdrop-blur-xl bg-black/30 border-b border-white/5">
           <div className="flex items-center gap-4">
             <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+              <div className="w-9 h-9 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.1)]">
                 <span className="text-white font-black">Z</span>
               </div>
               <span className="text-white font-semibold tracking-wide">ZauuuiD</span>
@@ -112,7 +112,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
                     className={[
                       "px-4 py-3 rounded-xl border text-sm text-left transition",
                       activeSection === item.id
-                        ? "border-red-500/60 bg-red-500/10 text-white"
+                        ? "border-white/60 bg-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                         : "border-white/10 bg-white/5 text-gray-300 hover:bg-white/10",
                     ].join(" ")}
                   >
