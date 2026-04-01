@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   server: { host: '0.0.0.0' },
-  base: "/ZauuuiD-blog2/", // 🔥 EXACT repo name (case-sensitive)
+  base: "/", // Netlify uses root path
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
