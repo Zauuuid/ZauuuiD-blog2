@@ -35,7 +35,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
             onClick={() => scrollTo("home")}
             className="cursor-pointer"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.15)]">
+            <div className="w-10 h-10 bg-black border border-white/20 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:border-white/40 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all">
               <span className="text-white font-black text-lg">Z</span>
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ export default function Navigation({ activeSection = "home", audioRef }) {
         <div className="px-5 py-4 flex items-center justify-between backdrop-blur-xl bg-black/30 border-b border-white/5">
           <div className="flex items-center gap-4">
             <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+              <div className="w-9 h-9 bg-black border border-white/20 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                 <span className="text-white font-black">Z</span>
               </div>
               <span className="text-white font-semibold tracking-wide">ZauuuiD</span>

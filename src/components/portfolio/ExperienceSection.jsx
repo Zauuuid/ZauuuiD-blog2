@@ -54,15 +54,15 @@ export default function ExperienceSection() {
       label: 'Volunteer',
     },
     contract: {
-      border: 'border-red-500',
-      ping: 'bg-black',
-      badge: 'bg-red-500/20 text-red-500',
+      border: 'border-white',
+      ping: 'bg-white',
+      badge: 'bg-white/20 text-white',
       label: 'Contract',
     },
     seasonal: {
-      border: 'border-red-500',
-      ping: 'bg-black',
-      badge: 'bg-red-500/20 text-red-500',
+      border: 'border-white',
+      ping: 'bg-white',
+      badge: 'bg-white/20 text-white',
       label: 'Seasonal',
     },
   };
@@ -76,7 +76,7 @@ export default function ExperienceSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="mb-16 text-center flex flex-col items-center"
           >
-            <span className="text-red-500 text-sm tracking-widest uppercase mb-2 inline-block">Journey</span>
+            <span className="text-gray-400 text-sm tracking-widest uppercase mb-2 inline-block">Journey</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mt-2">
               Professional Experience
             </h2>
@@ -89,14 +89,14 @@ export default function ExperienceSection() {
             transition={{ delay: 0.2 }}
             className="mb-16"
           >
-            <div className="p-8 border-2 border-red-500/30 rounded-xl bg-gradient-to-r from-red-500/10 to-transparent">
+            <div className="p-8 border-2 border-white/20 rounded-xl bg-gradient-to-r from-white/10 to-transparent shadow-[0_0_30px_rgba(255,255,255,0.05)]">
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="text-red-500" size={28} />
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 border border-white/5 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                  <GraduationCap className="text-white" size={28} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-1">{education.degree}</h3>
-                  <p className="text-red-500 font-medium mb-2">{education.institution}</p>
+                  <p className="text-white opacity-80 font-medium mb-2">{education.institution}</p>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
                     <span className="flex items-center gap-1">
                       <Calendar size={14} />
@@ -106,7 +106,7 @@ export default function ExperienceSection() {
                   </div>
                   {education.achievements.map((achievement, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm">
-                      <Award className="text-red-500" size={16} />
+                      <Award className="text-white" size={16} />
                       <span className="text-gray-300">{achievement}</span>
                     </div>
                   ))}
@@ -121,7 +121,7 @@ export default function ExperienceSection() {
               initial={{ height: 0 }}
               animate={isInView ? { height: '100%' } : {}}
               transition={{ duration: 1.5, delay: 0.4 }}
-              className="absolute left-2 md:left-8 top-0 w-px bg-gradient-to-b from-red-500 via-red-500/50 to-transparent"
+              className="absolute left-2 md:left-8 top-0 w-px bg-gradient-to-b from-white via-white/50 to-transparent shadow-[0_0_10px_rgba(255,255,255,0.2)]"
             />
 
             <div className="space-y-12">
@@ -140,12 +140,12 @@ export default function ExperienceSection() {
                     transition={{ delay: 0.6 + index * 0.2 }}
                     className={`absolute left-2 md:left-8 top-0 w-4 h-4 -translate-x-1/2 
                       bg-[#0a0a0a] border-2 rounded-full
-                      ${experienceTypeStyles[exp.type]?.border || 'border-red-500'}
+                      ${experienceTypeStyles[exp.type]?.border || 'border-white'}
                     `}
                   >
                     <div
                       className={`absolute inset-0 rounded-full animate-ping opacity-20
-                        ${experienceTypeStyles[exp.type]?.ping || 'bg-red-500'}
+                        ${experienceTypeStyles[exp.type]?.ping || 'bg-white'}
                       `}
                     />
                   </motion.div>
@@ -168,7 +168,7 @@ export default function ExperienceSection() {
                             </span>
                           )}
                         </div>
-                        <p className="text-red-500 font-medium">{exp.company}</p>
+                        <p className="text-white opacity-80 font-medium">{exp.company}</p>
                       </div>
                       <div className="text-right text-sm">
                         <div className="flex items-center gap-2 text-gray-500 mb-1">
@@ -181,7 +181,7 @@ export default function ExperienceSection() {
                     <ul className="space-y-2">
                       {exp.description.map((item, i) => (
                         <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
-                          <span className="text-red-500 mt-1.5">▹</span>
+                          <span className="text-white mt-1.5 opacity-60">▹</span>
                           {item}
                         </li>
                       ))}
@@ -203,7 +203,7 @@ export default function ExperienceSection() {
           opacity: { delay: 1, duration: 0.5 },
           y: { delay: 1, duration: 1.5, repeat: Infinity },
         }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-red-500/50 hover:text-red-400 transition-colors cursor-pointer z-10"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 hover:text-white transition-colors cursor-pointer z-10"
       >
         <ChevronDown size={32} />
       </motion.button>

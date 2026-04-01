@@ -51,7 +51,7 @@ export default function AudioController({ audioRef, orientation = "vertical" }) 
         return (
             <button
                 onClick={toggleMute}
-                className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-red-500 hover:bg-white/10 transition-all shadow-lg"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 transition-all shadow-lg active:scale-95 shadow-white/5"
                 aria-label="Toggle Volume"
             >
                 {volume === 0 || audioRef?.current?.paused ? <VolumeX size={18} /> : <Volume2 size={18} />}
@@ -74,7 +74,7 @@ export default function AudioController({ audioRef, orientation = "vertical" }) 
             >
                 <button
                     onClick={(e) => { e.stopPropagation(); toggleMute(); }}
-                    className="flex-shrink-0 flex items-center justify-center w-6 h-6 text-gray-400 hover:text-red-500 transition-colors"
+                    className="flex-shrink-0 flex items-center justify-center w-6 h-6 text-gray-400 hover:text-white transition-colors"
                     aria-label="Toggle Volume"
                 >
                     {volume === 0 || audioRef?.current?.paused ? <VolumeX size={16} /> : <Volume2 size={16} />}
@@ -92,7 +92,7 @@ export default function AudioController({ audioRef, orientation = "vertical" }) 
                             step="0.01"
                             value={volume}
                             onChange={handleVolumeChange}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/20 rounded-lg appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:bg-red-500 [&::-webkit-slider-thumb]:rounded-full hover:[&::-webkit-slider-thumb]:bg-red-400 block origin-center w-[70px] h-1 -rotate-90 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/20 rounded-lg appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full hover:[&::-webkit-slider-thumb]:bg-gray-200 block origin-center w-[70px] h-1 -rotate-90 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
                         />
                     </div>
                 </div>

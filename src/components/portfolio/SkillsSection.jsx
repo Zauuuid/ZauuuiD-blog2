@@ -48,7 +48,7 @@ export default function SkillsSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="mb-16 text-center flex flex-col items-center w-full"
           >
-            <span className="text-red-500 text-sm tracking-widest uppercase mb-2">Stack</span>
+            <span className="text-gray-400 text-sm tracking-widest uppercase mb-2">Stack</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mt-2">Skills & Tools</h2>
             <p className="text-gray-400 mt-4 max-w-2xl text-sm md:text-base">
               A focused toolkit for real-world security testing and building repeatable workflows.
@@ -66,8 +66,8 @@ export default function SkillsSection() {
                 className="p-6 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
-                    <b.icon className="text-red-500" size={22} />
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/5">
+                    <b.icon className="text-white" size={22} />
                   </div>
                   <div className="text-white font-semibold">{b.title}</div>
                 </div>
@@ -75,7 +75,7 @@ export default function SkillsSection() {
                 <ul className="space-y-2 text-gray-400 text-sm leading-relaxed">
                   {b.items.map((it) => (
                     <li key={it} className="flex items-start gap-2">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red-500/70 flex-shrink-0" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/50 flex-shrink-0" />
                       <span>{it}</span>
                     </li>
                   ))}
@@ -84,7 +84,7 @@ export default function SkillsSection() {
                 <div className="mt-6 h-px bg-white/10" />
                 <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
                   <span>Always improving</span>
-                  <span className="text-red-500">↗</span>
+                  <span className="text-white">↗</span>
                 </div>
               </motion.div>
             ))}
