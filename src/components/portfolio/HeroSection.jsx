@@ -34,7 +34,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full max-w-2xl bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 mb-16 md:mb-0 shadow-[0_0_50px_rgba(255,255,255,0.07)] flex flex-col items-center text-center relative overflow-hidden group"
+          className="w-full max-w-2xl bg-black/15 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:p-12 mb-16 md:mb-0 shadow-[0_0_50px_rgba(255,255,255,0.07)] flex flex-col items-center text-center relative overflow-hidden group"
         >
           {/* Subtle top glare effect for glass */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
