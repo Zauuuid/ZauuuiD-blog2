@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import AudioController from "@/components/AudioController";
 
 const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
-  { id: "awards", label: "Awards" },
-  { id: "blog", label: "Blog" },
-  { id: "contact", label: "Contact" },
 ];
 
-export default function Navigation({ activeSection = "home" }) {
+export default function Navigation({ activeSection = "home", audioRef }) {
   const [open, setOpen] = useState(false);
 
   const scrollTo = (id) => {
@@ -30,16 +28,19 @@ export default function Navigation({ activeSection = "home" }) {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="fixed left-0 top-0 h-full w-20 hidden lg:flex flex-col items-center justify-between py-8 z-50"
       >
-        {/* Logo */}
-        <motion.div
-          whileHover={{ scale: 1.08 }}
-          onClick={() => scrollTo("home")}
-          className="cursor-pointer"
-        >
-          <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20">
-            <span className="text-white font-black text-lg">S</span>
-          </div>
-        </motion.div>
+        {/* Logo and Audio */}
+        <div className="flex flex-col items-center gap-6">
+          <motion.div
+            whileHover={{ scale: 1.08 }}
+            onClick={() => scrollTo("home")}
+            className="cursor-pointer"
+          >
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20">
+              <span className="text-white font-black text-lg">S</span>
+            </div>
+          </motion.div>
+          <AudioController audioRef={audioRef} />
+        </div>
 
         {/* Dots */}
         <div className="flex flex-col gap-4">
@@ -76,12 +77,15 @@ export default function Navigation({ activeSection = "home" }) {
       {/* Mobile top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden">
         <div className="px-5 py-4 flex items-center justify-between backdrop-blur-xl bg-black/30 border-b border-white/5">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-black">S</span>
-            </div>
-            <span className="text-white font-semibold tracking-wide">ZauuuiD</span>
-          </button>
+          <div className="flex items-center gap-4">
+            <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-black">S</span>
+              </div>
+              <span className="text-white font-semibold tracking-wide">ZauuuiD</span>
+            </button>
+            <AudioController audioRef={audioRef} orientation="horizontal" />
+          </div>
 
           <button
             onClick={() => setOpen((v) => !v)}

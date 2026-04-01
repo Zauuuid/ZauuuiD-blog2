@@ -5,18 +5,15 @@ import HeroSection from '@/components/portfolio/HeroSection';
 import AboutSection from '@/components/portfolio/AboutSection';
 import ExperienceSection from '@/components/portfolio/ExperienceSection';
 import SkillsSection from '@/components/portfolio/SkillsSection';
-import AwardsSection from '@/components/portfolio/AwardsSection';
-import BlogSection from '@/components/portfolio/BlogSection';
-import ContactSection from '@/components/portfolio/ContactSection';
 
-export default function Home() {
+export default function Home({ audioRef }) {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'skills', 'awards', 'blog', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills'];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -31,7 +28,7 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -39,32 +36,23 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0a] text-white relative">
       {/* Particle Background */}
       <ParticleBackground />
-      
+
       {/* Navigation */}
-      <Navigation activeSection={activeSection} />
-      
+      <Navigation activeSection={activeSection} audioRef={audioRef} />
+
       {/* Main Content */}
       <main className="relative z-10">
-        <section id="home">
+        <section id="home" className="snap-start">
           <HeroSection />
         </section>
-        <section id="about">
+        <section id="about" className="snap-start">
           <AboutSection />
         </section>
-        <section id="experience">
+        <section id="experience" className="snap-start">
           <ExperienceSection />
         </section>
-        <section id="skills">
+        <section id="skills" className="snap-start">
           <SkillsSection />
-        </section>
-        <section id="awards">
-          <AwardsSection />
-        </section>
-        <section id="blog">
-          <BlogSection />
-        </section>
-        <section id="contact">
-          <ContactSection />
         </section>
       </main>
 

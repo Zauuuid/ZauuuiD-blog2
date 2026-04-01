@@ -40,22 +40,22 @@ export default function SkillsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="min-h-screen py-20 lg:py-32 relative" ref={ref}>
-      <div className="container mx-auto px-6 lg:px-20">
-        <div className="lg:ml-20">
+    <section id="skills" className="min-h-screen py-20 lg:py-32 relative flex items-center" ref={ref}>
+      <div className="container mx-auto px-4 md:px-8 flex justify-center">
+        <div className="max-w-5xl w-full flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="mb-16 text-center lg:text-left"
+            className="mb-16 text-center flex flex-col items-center w-full"
           >
-            <span className="text-red-500 text-sm tracking-widest uppercase">Stack</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mt-4">Skills & Tools</h2>
-            <p className="text-gray-400 mt-4 max-w-2xl">
+            <span className="text-red-500 text-sm tracking-widest uppercase mb-2">Stack</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mt-2">Skills & Tools</h2>
+            <p className="text-gray-400 mt-4 max-w-2xl text-sm md:text-base">
               A focused toolkit for real-world security testing and building repeatable workflows.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {buckets.map((b, idx) => (
               <motion.div
                 key={b.title}

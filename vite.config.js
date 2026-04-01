@@ -4,6 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  server: { host: '0.0.0.0' },
   base: "/ZauuuiD-Portfolio/", // 🔥 EXACT repo name (case-sensitive)
   resolve: {
     alias: {
