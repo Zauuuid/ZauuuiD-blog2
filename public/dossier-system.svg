@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" fill="none">
+  <rect width="900" height="620" rx="28" fill="#E8DCC7"/>
+  <path d="M280 310h90M530 310h90" stroke="#606C38" stroke-width="4" stroke-linecap="round"/>
+  <path d="m355 299 12 11-12 11M615 299l12 11-12 11" stroke="#606C38" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="54" y="101" width="226" height="418" rx="22" fill="#DCE4D7" stroke="#C8BEAA" stroke-width="2"/>
+  <text x="250" y="151" text-anchor="end" fill="#303B2D" font-family="Cairo, sans-serif" font-size="24" font-weight="700">محتوى الموقع</text>
+  <g fill="#596151" font-family="Cairo, sans-serif" font-size="21">
+    <text x="250" y="216" text-anchor="end">نبذة</text>
+    <text x="250" y="278" text-anchor="end">المشاريع</text>
+    <text x="250" y="340" text-anchor="end">الخبرة</text>
+    <text x="250" y="402" text-anchor="end">المهارات</text>
+  </g>
+  <g fill="#8B9D83">
+    <circle cx="84" cy="208" r="7"/><circle cx="84" cy="270" r="7"/><circle cx="84" cy="332" r="7"/><circle cx="84" cy="394" r="7"/>
+  </g>
+  <rect x="370" y="224" width="160" height="172" rx="24" fill="#606C38"/>
+  <text x="450" y="286" text-anchor="middle" fill="#E8DCC7" font-family="Cairo, sans-serif" font-size="23" font-weight="700">الموقع</text>
+  <text x="450" y="326" text-anchor="middle" fill="#E8DCC7" font-family="Cairo, sans-serif" font-size="23" font-weight="700">الشخصي</text>
+  <text x="450" y="360" text-anchor="middle" fill="#E8DCC7" font-family="Cairo, sans-serif" font-size="14">متجاوب للجوال</text>
+  <rect x="620" y="170" width="226" height="282" rx="22" fill="#DCE4D7" stroke="#C8BEAA" stroke-width="2"/>
+  <rect x="644" y="194" width="178" height="118" rx="14" fill="#E8DCC7"/>
+  <rect x="662" y="214" width="144" height="9" rx="4.5" fill="#8B9D83"/>
+  <rect x="662" y="237" width="106" height="9" rx="4.5" fill="#C8BEAA"/>
+  <rect x="662" y="260" width="128" height="9" rx="4.5" fill="#C8BEAA"/>
+  <text x="822" y="359" text-anchor="end" fill="#303B2D" font-family="Cairo, sans-serif" font-size="21" font-weight="700">دراسة المشروع</text>
+  <text x="822" y="395" text-anchor="end" fill="#596151" font-family="Cairo, sans-serif" font-size="15">الفكرة والتقنيات</text>
+</svg>
